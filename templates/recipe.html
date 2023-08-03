@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ recipe.name }}</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recipe.css') }}">
+</head>
+<body>
+	{% include 'base.html' %}
+
+	<div class="recipe-container">
+		<div class="recipe-image">
+			<img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }} image">
+		</div>
+
+		<div class="recipe-info">
+			<h1 class="recipe-name">{{ recipe.name }}</h1>
+			<p class="recipe-description">{{ recipe.description }}</p>
+			<p class="recipe-ingredients"><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+			<p class="recipe-instructions"><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+			<p class="recipe-date"><strong>Date added:</strong> {{ recipe.date_added }}</p>
+			<a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="edit-recipe-btn">Edit</a>
+			<a href="{{ url_for('delete_recipe', recipe_id=recipe.id) }}" class="delete-recipe-btn">Delete</a>
+		</div>
+	</div>
+
+</body>
+<script src="static/js/recipe.js"></script>
+</html>

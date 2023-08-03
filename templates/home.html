@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe App</title>
+	<link rel="stylesheet" href="home.css">
+
+	<!-- Link to the external stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	
+	<!-- Set the viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Set the character encoding -->
+	<meta charset="UTF-8">
+	
+	<!-- Include the Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Include the jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- Include the Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#">Recipe App</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+					<li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+					<li><a href="{{ url_for('new_recipe') }}">New Recipe</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!-- Main content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Welcome to the Recipe App!</h1>
+				<p>Click on the Recipes link to see all the recipes.</p>
+				<p>Click on the New Recipe link to add a new recipe.</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer class="container-fluid text-center">
+		<p>Recipe App &copy; 2023</p>
+	</footer>
+</body>
+<script src="static/js/home.js"></script>
+
+</html>

@@ -30,5 +30,3 @@ $(document).ready(function() {
       window.location.href = '/recipes/edit/' + recipe_id;
     });
   });
-
-  
